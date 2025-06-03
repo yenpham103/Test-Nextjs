@@ -24,10 +24,8 @@ const Home: React.FC<HomeProps> = ({ featuredPosts, recentPosts }) => {
         description="Tham gia cùng chúng tôi trong hành trình khám phá những bài viết chất lượng cao về công nghệ, cuộc sống và những chủ đề thú vị khác."
       />
 
-      {/* Hero Section */}
       <HeroSection />
 
-      {/* Featured Posts */}
       <section className="py-20 bg-white">
         <div className="container-custom">
           <div className="flex items-center justify-between mb-12">
@@ -55,8 +53,6 @@ const Home: React.FC<HomeProps> = ({ featuredPosts, recentPosts }) => {
           </div>
         </div>
       </section>
-
-      {/* Stats Section */}
       <section className="py-16 bg-gray-50">
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -91,9 +87,8 @@ const Home: React.FC<HomeProps> = ({ featuredPosts, recentPosts }) => {
             </div>
           </div>
         </div>
-      </section>s
+      </section>
 
-      {/* Recent Posts */}
       <section className="py-20 bg-white">
         <div className="container-custom">
           <div className="flex items-center justify-between mb-12">
@@ -136,10 +131,8 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
     const posts = await fetchBlogPosts();
     const transformedPosts = posts.map(transformBlogPost);
 
-    // Get featured posts (first 6)
     const featuredPosts = transformedPosts.slice(0, 6);
 
-    // Get recent posts (posts 7-12)
     const recentPosts = transformedPosts.slice(6, 12);
 
     return {
@@ -147,7 +140,7 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
         featuredPosts,
         recentPosts,
       },
-      revalidate: 3600, // Revalidate every hour
+      revalidate: 3600,
     };
   } catch (error) {
     console.error('Error in getStaticProps:', error);

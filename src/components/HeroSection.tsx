@@ -7,13 +7,11 @@ const HeroSection: React.FC = () => {
         <section className="relative bg-gradient-to-br from-primary-50 via-white to-primary-50 py-20">
             <div className="container-custom">
                 <div className="max-w-4xl mx-auto text-center">
-                    {/* Badge */}
                     <div className="inline-flex items-center space-x-2 bg-primary-100 text-primary-800 px-4 py-2 rounded-full text-sm font-medium mb-8 animate-fade-in">
                         <Star className="w-4 h-4" />
                         <span>Chào mừng đến với Modern Blog</span>
                     </div>
 
-                    {/* Heading */}
                     <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 animate-slide-up">
                         Khám phá những
                         <span className="text-gradient block md:inline md:ml-3">
@@ -21,14 +19,12 @@ const HeroSection: React.FC = () => {
                         </span>
                     </h1>
 
-                    {/* Description */}
                     <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed animate-slide-up">
                         Tham gia cùng chúng tôi trong hành trình khám phá những bài viết chất lượng cao về công nghệ,
                         cuộc sống và những chủ đề thú vị khác. Mỗi bài viết đều được chọn lọc kỹ lưỡng để mang đến cho bạn
                         những trải nghiệm đọc tốt nhất.
                     </p>
 
-                    {/* CTA Buttons */}
                     <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 mb-16 animate-scale-in">
                         <Link
                             href="/blog"
@@ -48,7 +44,6 @@ const HeroSection: React.FC = () => {
                         </Link>
                     </div>
 
-                    {/* Stats */}
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 animate-fade-in">
                         <div className="text-center">
                             <div className="text-3xl font-bold text-primary-600 mb-2">100+</div>
@@ -66,7 +61,6 @@ const HeroSection: React.FC = () => {
                 </div>
             </div>
 
-            {/* Background decoration */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
                 <div className="absolute top-20 left-10 w-20 h-20 bg-primary-200 rounded-full opacity-20 animate-bounce"></div>
                 <div className="absolute top-40 right-20 w-16 h-16 bg-primary-300 rounded-full opacity-30 animate-bounce" style={{ animationDelay: '0.5s' }}></div>

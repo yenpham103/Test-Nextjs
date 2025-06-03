@@ -42,7 +42,6 @@ const Pagination: React.FC<PaginationProps> = ({
 
     return (
         <div className="flex items-center justify-center space-x-2 mt-12">
-            {/* Previous Button */}
             <button
                 onClick={() => onPageChange(currentPage - 1)}
                 disabled={currentPage === 1}
@@ -52,7 +51,6 @@ const Pagination: React.FC<PaginationProps> = ({
                 <span className="hidden sm:inline">Trước</span>
             </button>
 
-            {/* Page Numbers */}
             <div className="flex items-center space-x-1">
                 {generatePageNumbers().map((page, index) => (
                     <React.Fragment key={index}>
@@ -73,7 +71,6 @@ const Pagination: React.FC<PaginationProps> = ({
                 ))}
             </div>
 
-            {/* Next Button */}
             <button
                 onClick={() => onPageChange(currentPage + 1)}
                 disabled={currentPage === totalPages}

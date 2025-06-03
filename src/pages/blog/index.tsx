@@ -1,14 +1,14 @@
 import React, { useState, useMemo } from 'react';
 import { GetStaticProps } from 'next';
 import { Search, Grid, List } from 'lucide-react';
-import { BlogPostWithSlug } from '@/src/types/blog';
-import { useInfiniteScroll } from '@/src/hooks/useInfiniteScroll';
-import Layout from '@/src/components/Layout';
-import SEO from '@/src/components/SEO';
-import BlogCard from '@/src/components/BlogCard';
-import { LoadingCard } from '@/src/components/Loading';
-import Pagination from '@/src/components/Pagination';
-import { fetchBlogPosts, transformBlogPost } from '@/src/lib/blog';
+import { BlogPostWithSlug } from '@/types/blog';
+import { useInfiniteScroll } from '@/hooks/useInfiniteScroll';
+import Layout from '@/components/Layout';
+import SEO from '@/components/SEO';
+import BlogCard from '@/components/BlogCard';
+import { LoadingCard } from '@/components/Loading';
+import Pagination from '@/components/Pagination';
+import { fetchBlogPosts, transformBlogPost } from '@/lib/blog';
 
 
 interface BlogIndexProps {
@@ -23,7 +23,6 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ posts }) => {
     const [usePagination, setUsePagination] = useState(true);
     const [currentPage, setCurrentPage] = useState(1);
 
-    // Filter posts based on search query
     const filteredPosts = useMemo(() => {
         if (!searchQuery.trim()) return posts;
 
@@ -33,7 +32,6 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ posts }) => {
         );
     }, [posts, searchQuery]);
 
-    // Pagination logic
     const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
     const paginatedPosts = useMemo(() => {
         const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
@@ -41,7 +39,6 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ posts }) => {
         return filteredPosts.slice(startIndex, endIndex);
     }, [filteredPosts, currentPage]);
 
-    // Infinite scroll logic
     const {
         displayedItems: infiniteScrollPosts,
         hasMore,
@@ -85,11 +82,9 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ posts }) => {
                 </div>
             </section>
 
-            {/* Filters and Search */}
             <section className="py-8 bg-white border-b border-gray-200">
                 <div className="container-custom">
                     <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-4 lg:space-y-0">
-                        {/* Search */}
                         <div className="relative flex-1 max-w-md">
                             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                             <input
@@ -101,9 +96,7 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ posts }) => {
                             />
                         </div>
 
-                        {/* Controls */}
                         <div className="flex items-center space-x-4">
-                            {/* View Mode Toggle */}
                             <div className="flex items-center space-x-2">
                                 <button
                                     onClick={() => setViewMode('grid')}
@@ -125,7 +118,6 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ posts }) => {
                                 </button>
                             </div>
 
-                            {/* Pagination Toggle */}
                             <div className="flex items-center space-x-2">
                                 <span className="text-sm text-gray-600">Phân trang:</span>
                                 <button
@@ -142,7 +134,6 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ posts }) => {
                         </div>
                     </div>
 
-                    {/* Results Count */}
                     <div className="mt-4 text-sm text-gray-600">
                         {searchQuery ? (
                             <>Tìm thấy {filteredPosts.length} kết quả cho {searchQuery}</>
@@ -153,7 +144,6 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ posts }) => {
                 </div>
             </section>
 
-            {/* Posts Grid */}
             <section className="py-12 bg-gray-50">
                 <div className="container-custom">
                     {displayPosts.length === 0 ? (
@@ -173,7 +163,6 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ posts }) => {
                                 ))}
                             </div>
 
-                            {/* Infinite Scroll Loading */}
                             {!usePagination && infiniteLoading && (
                                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
                                     {Array.from({ length: 3 }).map((_, index) => (
@@ -182,7 +171,6 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ posts }) => {
                                 </div>
                             )}
 
-                            {/* Load More Button for Infinite Scroll */}
                             {!usePagination && hasMore && !infiniteLoading && (
                                 <div className="text-center mt-12">
                                     <button
@@ -194,7 +182,6 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ posts }) => {
                                 </div>
                             )}
 
-                            {/* Pagination */}
                             {usePagination && (
                                 <Pagination
                                     currentPage={currentPage}
@@ -219,7 +206,7 @@ export const getStaticProps: GetStaticProps<BlogIndexProps> = async () => {
             props: {
                 posts: transformedPosts,
             },
-            revalidate: 3600, // Revalidate every hour
+            revalidate: 3600,
         };
     } catch (error) {
         console.error('Error in getStaticProps:', error);
