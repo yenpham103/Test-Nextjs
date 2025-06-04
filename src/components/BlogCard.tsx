@@ -7,7 +7,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
     return (
         <article className="card card-hover p-6 group">
             <div className="mb-4">
-                <div className="flex items-center space-x-4 text-sm text-gray-500 mb-3">
+                <div className="flex items-center space-x-1 text-sm text-gray-500 mb-3">
                     <div className="flex items-center space-x-1">
                         <Calendar className="w-4 h-4" />
                         <span>{post.createdAt}</span>

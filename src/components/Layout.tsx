@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Home, BookOpen, User, Github, Twitter } from 'lucide-react';
+import { Home, BookOpen, User, Github, Facebook } from 'lucide-react';
 
 interface LayoutProps {
     children: React.ReactNode;
@@ -16,7 +16,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                             <div className="w-8 h-8 bg-gradient-to-r from-primary-600 to-primary-800 rounded-lg flex items-center justify-center">
                                 <BookOpen className="w-5 h-5 text-white" />
                             </div>
-                            <span className="text-xl font-bold text-gradient">Modern Blog</span>
+                            <span className="text-xl font-bold text-gradient">Xipat Blog</span>
                         </Link>
 
                         <nav className="hidden md:flex items-center space-x-8">
@@ -35,7 +35,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                                 <span>Blog</span>
                             </Link>
                             <Link
-                                href="/about"
+                                href="/"
                                 className="flex items-center space-x-2 text-gray-600 hover:text-primary-600 transition-colors"
                             >
                                 <User className="w-4 h-4" />
@@ -66,7 +66,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                                 <div className="w-8 h-8 bg-gradient-to-r from-primary-600 to-primary-800 rounded-lg flex items-center justify-center">
                                     <BookOpen className="w-5 h-5 text-white" />
                                 </div>
-                                <span className="text-xl font-bold text-gradient">Modern Blog</span>
+                                <span className="text-xl font-bold text-gradient">Xipat Blog</span>
                             </div>
                             <p className="text-gray-600 max-w-md">
                                 Khám phá những bài viết chất lượng về công nghệ, cuộc sống và nhiều chủ đề thú vị khác.
@@ -78,8 +78,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                             <ul className="space-y-2">
                                 <li><Link href="/" className="text-gray-600 hover:text-primary-600 transition-colors">Trang chủ</Link></li>
                                 <li><Link href="/blog" className="text-gray-600 hover:text-primary-600 transition-colors">Blog</Link></li>
-                                <li><Link href="/about" className="text-gray-600 hover:text-primary-600 transition-colors">Giới thiệu</Link></li>
-                                <li><Link href="/contact" className="text-gray-600 hover:text-primary-600 transition-colors">Liên hệ</Link></li>
                             </ul>
                         </div>
 
@@ -87,16 +85,16 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                             <h3 className="font-semibold text-gray-900 mb-4">Kết nối</h3>
                             <div className="flex space-x-4">
                                 <a
-                                    href="#"
+                                    href="https://github.com/yenpham103"
                                     className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center text-gray-600 hover:bg-primary-600 hover:text-white transition-colors"
                                 >
                                     <Github className="w-5 h-5" />
                                 </a>
                                 <a
-                                    href="#"
+                                    href="https://www.facebook.com/nosgar.1003"
                                     className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center text-gray-600 hover:bg-primary-600 hover:text-white transition-colors"
                                 >
-                                    <Twitter className="w-5 h-5" />
+                                    <Facebook className="w-5 h-5" />
                                 </a>
                             </div>
                         </div>
@@ -104,7 +102,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
                     <div className="border-t border-gray-200 mt-8 pt-8 text-center">
                         <p className="text-gray-600">
-                            © {new Date().getFullYear()} Modern Blog. Tất cả quyền được bảo lưu.
+                            © {new Date().getFullYear()} XIPAT FLEXIBLE SOLUTIONS COMPANY LIMITED.
                         </p>
                     </div>
                 </div>

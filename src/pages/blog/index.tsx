@@ -64,7 +64,7 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ posts }) => {
     return (
         <Layout>
             <SEO
-                title="Blog - Modern Blog"
+                title="Blog - Xipat Blog"
                 description="Khám phá tất cả bài viết về công nghệ, cuộc sống và những chủ đề thú vị khác. Cập nhật liên tục với nội dung chất lượng cao."
             />
 

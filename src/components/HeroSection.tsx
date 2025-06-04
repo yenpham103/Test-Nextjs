@@ -7,22 +7,20 @@ const HeroSection: React.FC = () => {
         <section className="relative bg-gradient-to-br from-primary-50 via-white to-primary-50 py-20">
             <div className="container-custom">
                 <div className="max-w-4xl mx-auto text-center">
-                    <div className="inline-flex items-center space-x-2 bg-primary-100 text-primary-800 px-4 py-2 rounded-full text-sm font-medium mb-8 animate-fade-in">
+                    <div className="inline-flex items-center space-x-2 bg-primary-100 text-primary-800 px-4 py-2 rounded-full text-slate-400 font-medium mb-8 animate-fade-in">
                         <Star className="w-4 h-4" />
-                        <span>Chào mừng đến với Modern Blog</span>
+                        <span>Chào mừng đến với Xipat Blog</span>
                     </div>
 
                     <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 animate-slide-up">
-                        Khám phá những
+                        Welcome to
                         <span className="text-gradient block md:inline md:ml-3">
-                            ý tưởng tuyệt vời
+                            XIPAT FLEXIBLE SOLUTIONS COMPANY LIMITED
                         </span>
                     </h1>
 
                     <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed animate-slide-up">
-                        Tham gia cùng chúng tôi trong hành trình khám phá những bài viết chất lượng cao về công nghệ,
-                        cuộc sống và những chủ đề thú vị khác. Mỗi bài viết đều được chọn lọc kỹ lưỡng để mang đến cho bạn
-                        những trải nghiệm đọc tốt nhất.
+                        Xipat cung cấp các giải pháp công nghệ cho cuộc sống tốt đẹp hơn
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 mb-16 animate-scale-in">
@@ -36,8 +34,8 @@ const HeroSection: React.FC = () => {
                         </Link>
 
                         <Link
-                            href="/about"
-                            className="btn btn-secondary flex items-center space-x-2 px-8 py-3 text-lg"
+                            href="/"
+                            className="btn btn-secondary flex items-center space-x-2 px-8 py-3 text-lg cursor-not-allowed"
                         >
                             <Users className="w-5 h-5" />
                             <span>Về chúng tôi</span>
@@ -47,15 +45,15 @@ const HeroSection: React.FC = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 animate-fade-in">
                         <div className="text-center">
                             <div className="text-3xl font-bold text-primary-600 mb-2">100+</div>
-                            <div className="text-gray-600">Bài viết chất lượng</div>
+                            <div className="text-gray-600">Đối tác trên khắp thế giới</div>
                         </div>
                         <div className="text-center">
-                            <div className="text-3xl font-bold text-primary-600 mb-2">50K+</div>
-                            <div className="text-gray-600">Lượt đọc mỗi tháng</div>
+                            <div className="text-3xl font-bold text-primary-600 mb-2">200+</div>
+                            <div className="text-gray-600">Sản phẩm</div>
                         </div>
                         <div className="text-center">
-                            <div className="text-3xl font-bold text-primary-600 mb-2">1K+</div>
-                            <div className="text-gray-600">Độc giả thân thiết</div>
+                            <div className="text-3xl font-bold text-primary-600 mb-2">500K+</div>
+                            <div className="text-gray-600">Khách hàng trên khắp thế giới</div>
                         </div>
                     </div>
                 </div>

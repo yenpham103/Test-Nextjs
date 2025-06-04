@@ -13,7 +13,7 @@ const nextConfig = {
 
   env: {
     SITE_URL: process.env.SITE_URL || 'http://localhost:3000',
-    SITE_NAME: process.env.SITE_NAME || 'Modern Blog',
+    SITE_NAME: process.env.SITE_NAME || 'Xipat Blog',
   },
 
   async headers() {

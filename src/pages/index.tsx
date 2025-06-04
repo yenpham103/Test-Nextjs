@@ -20,7 +20,7 @@ const Home: React.FC<HomeProps> = ({ featuredPosts, recentPosts }) => {
   return (
     <Layout>
       <SEO
-        title="Modern Blog - Khám phá những ý tưởng tuyệt vời"
+        title="Xipat Blog - Khám phá những ý tưởng tuyệt vời"
         description="Tham gia cùng chúng tôi trong hành trình khám phá những bài viết chất lượng cao về công nghệ, cuộc sống và những chủ đề thú vị khác."
       />
 

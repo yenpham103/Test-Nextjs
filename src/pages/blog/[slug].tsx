@@ -126,7 +126,7 @@ const BlogDetail: React.FC<BlogDetailProps> = ({ post, relatedPosts }) => {
                                         Tác giả #{post.userId}
                                     </h3>
                                     <p className="text-gray-600 mb-4">
-                                        Một tác giả tài năng với nhiều bài viết chất lượng trên Modern Blog.
+                                        Một tác giả tài năng với nhiều bài viết chất lượng trên Xipat Blog.
                                         Luôn mang đến những góc nhìn mới mẻ và thú vị cho độc giả.
                                     </p>
                                     <div className="flex items-center space-x-4">

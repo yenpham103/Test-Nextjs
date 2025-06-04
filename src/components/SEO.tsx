@@ -7,7 +7,7 @@ const SEO: React.FC<SEOProps> = ({
     image = '/blog-og-image.jpg',
     url = process.env.SITE_URL || 'http://localhost:3000'
 }) => {
-    const siteName = process.env.SITE_NAME || 'Modern Blog';
+    const siteName = process.env.SITE_NAME || 'Xipat Blog';
     const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
 
     return (
