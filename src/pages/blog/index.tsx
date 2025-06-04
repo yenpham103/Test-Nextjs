@@ -11,17 +11,16 @@ import Pagination from '@/components/Pagination';
 import { fetchBlogPosts, transformBlogPost } from '@/lib/blog';
 import Image from 'next/image';
 
-
 interface BlogIndexProps {
     posts: BlogPostWithSlug[];
 }
 
-const POSTS_PER_PAGE = 9;
+const POSTS_PER_PAGE = 3;
 
 const BlogIndex: React.FC<BlogIndexProps> = ({ posts }) => {
     const [searchQuery, setSearchQuery] = useState('');
     const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
-    const [usePagination, setUsePagination] = useState(true);
+    const [usePagination, setUsePagination] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
 
     const filteredPosts = useMemo(() => {
@@ -122,10 +121,12 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ posts }) => {
                             </div>
 
                             <div className="flex items-center space-x-2">
-                                <span className="text-sm text-gray-600">Phân trang:</span>
+                                <span className="text-sm text-gray-600">
+                                    {usePagination ? 'Phân trang' : 'Cuộn vô hạn'}:
+                                </span>
                                 <button
                                     onClick={() => setUsePagination(!usePagination)}
-                                    className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${usePagination ? 'bg-primary-600' : 'bg-gray-200'
+                                    className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors cursor-pointer ${usePagination ? 'bg-pink-300' : 'bg-blue-500'
                                         }`}
                                 >
                                     <span
@@ -138,10 +139,8 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ posts }) => {
                     </div>
 
                     <div className="mt-4 text-sm text-gray-600">
-                        {searchQuery ? (
-                            <>Tìm thấy {filteredPosts.length} kết quả cho {searchQuery}</>
-                        ) : (
-                            <>Hiển thị {posts.length} bài viết</>
+                        {!usePagination && hasMore && (
+                            <span className="text-primary-600 ml-1">Cuộn xuống để tải thêm bài viết</span>
                         )}
                     </div>
                 </div>
@@ -161,8 +160,8 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ posts }) => {
                                 ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'
                                 : 'space-y-6'
                                 }`}>
-                                {displayPosts.map((post) => (
-                                    <BlogCard key={post.id} post={post} />
+                                {displayPosts.map((post, index) => (
+                                    <BlogCard key={`post-${post.id}-${index}`} post={post} />
                                 ))}
                             </div>
 
@@ -178,9 +177,9 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ posts }) => {
                                 <div className="text-center mt-12">
                                     <button
                                         onClick={loadMore}
-                                        className="btn btn-primary"
+                                        className="btn btn-primary px-8 py-3"
                                     >
-                                        Tải thêm bài viết
+                                        Tải thêm bài viết ({filteredPosts.length - displayPosts.length} còn lại)
                                     </button>
                                 </div>
                             )}

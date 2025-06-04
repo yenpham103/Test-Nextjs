@@ -54,7 +54,19 @@ export const fetchBlogPosts = async (): Promise<BlogPost[]> => {
         if (!response.ok) {
             throw new Error('Failed to fetch posts');
         }
-        return await response.json();
+        const originalPosts = await response.json();
+
+        const duplicatedPosts = [];
+        for (let i = 0; i < 5; i++) {
+            const batch = originalPosts.map((post: BlogPost) => ({
+                ...post,
+                id: post.id + (i * 100),
+                title: `${post.title} (Batch ${i + 1})`,
+            }));
+            duplicatedPosts.push(...batch);
+        }
+
+        return duplicatedPosts;
     } catch (error) {
         console.error('Error fetching blog posts:', error);
         return [];

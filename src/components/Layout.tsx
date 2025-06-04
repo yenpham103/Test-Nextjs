@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Home, BookOpen, User, Github, Facebook } from 'lucide-react';
+import BackToTop from './BackToTop';
 
 interface LayoutProps {
     children: React.ReactNode;
@@ -107,6 +108,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                     </div>
                 </div>
             </footer>
+            <BackToTop />
         </div>
     );
 };

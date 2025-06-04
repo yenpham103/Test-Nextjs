@@ -36,7 +36,7 @@ export function useInfiniteScroll<T>({
             setDisplayedItems(prev => [...prev, ...newItems]);
             setCurrentPage(prev => prev + 1);
             setLoading(false);
-        }, 500);
+        }, 150);
     }, [items, itemsPerPage, currentPage, loading, hasMore]);
 
     const reset = useCallback(() => {
@@ -58,17 +58,25 @@ export function useInfiniteScroll<T>({
     }, [items, reset]);
 
     useEffect(() => {
+        let ticking = false;
+
         const handleScroll = () => {
-            if (
-                window.innerHeight + document.documentElement.scrollTop
-                >= document.documentElement.offsetHeight - 1000
-            ) {
-                loadMore();
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    if (
+                        window.innerHeight + document.documentElement.scrollTop
+                        >= document.documentElement.offsetHeight - 1000
+                    ) {
+                        loadMore();
+                    }
+                    ticking = false;
+                });
+                ticking = true;
             }
         };
 
         if (hasMore && !loading) {
-            window.addEventListener('scroll', handleScroll);
+            window.addEventListener('scroll', handleScroll, { passive: true });
             return () => window.removeEventListener('scroll', handleScroll);
         }
     }, [hasMore, loading, loadMore]);
