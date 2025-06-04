@@ -74,7 +74,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                         </div>
 
                         <div>
-                            <h3 className="font-semibold text-gray-900 mb-4">Liên kết nhanh</h3>
+                            <h3 className="font-semibold text-gray-900 mb-4">Links</h3>
                             <ul className="space-y-2">
                                 <li><Link href="/" className="text-gray-600 hover:text-primary-600 transition-colors">Trang chủ</Link></li>
                                 <li><Link href="/blog" className="text-gray-600 hover:text-primary-600 transition-colors">Blog</Link></li>
@@ -82,7 +82,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                         </div>
 
                         <div>
-                            <h3 className="font-semibold text-gray-900 mb-4">Kết nối</h3>
+                            <h3 className="font-semibold text-gray-900 mb-4">Contact</h3>
                             <div className="flex space-x-4">
                                 <a
                                     href="https://github.com/yenpham103"

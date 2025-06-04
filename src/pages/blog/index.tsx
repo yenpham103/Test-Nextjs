@@ -9,6 +9,7 @@ import BlogCard from '@/components/BlogCard';
 import { LoadingCard } from '@/components/Loading';
 import Pagination from '@/components/Pagination';
 import { fetchBlogPosts, transformBlogPost } from '@/lib/blog';
+import Image from 'next/image';
 
 
 interface BlogIndexProps {
@@ -68,10 +69,12 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ posts }) => {
                 description="Khám phá tất cả bài viết về công nghệ, cuộc sống và những chủ đề thú vị khác. Cập nhật liên tục với nội dung chất lượng cao."
             />
 
-            {/* Hero Section */}
             <section className="bg-gradient-to-r from-primary-600 to-primary-800 py-16">
-                <div className="container-custom">
-                    <div className="text-center text-white">
+                <div className="container-custom bg-primary-100 rounded-full flex gap-12 items-center justify-center mx-auto mb-4">
+                    <div className='rounded-full overflow-hidden object-cover pointer-events-none'>
+                        <Image src="https://xprofile.vn/_next/image?url=https%3A%2F%2Fhe44r2a3tgobj.vcdn.cloud%2Fp%2FAvatar%2F0b180660-4ee5-46dc-82d6-f25af7598991.webp&w=256&q=100" alt="Xipat Blog" width={200} height={200} />
+                    </div>
+                    <div className="text-start text-white">
                         <h1 className="text-4xl md:text-5xl font-bold mb-4">
                             Tất cả bài viết
                         </h1>

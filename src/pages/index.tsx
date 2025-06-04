@@ -1,13 +1,14 @@
 import React from 'react';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
-import { ArrowRight, TrendingUp, Clock, Star } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import Layout from '../components/Layout';
 import { BlogPostWithSlug } from '../types/blog';
 import SEO from '../components/SEO';
 import HeroSection from '../components/HeroSection';
 import BlogCard from '../components/BlogCard';
 import { fetchBlogPosts, transformBlogPost } from '../lib/blog';
+import Image from 'next/image';
 
 
 
@@ -57,32 +58,32 @@ const Home: React.FC<HomeProps> = ({ featuredPosts, recentPosts }) => {
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center p-8 bg-white rounded-xl shadow-sm">
-              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <TrendingUp className="w-8 h-8 text-primary-600" />
+              <div className="bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Image src="https://xprofile.vn/_next/image?url=https%3A%2F%2Fhe44r2a3tgobj.vcdn.cloud%2Fp%2FImage%2F91b37322-a23b-40a2-b5ab-d46b4bc35a08.png&w=256&q=75" alt="Trending" width={120} height={120} />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Trending</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Buổi sáng</h3>
               <p className="text-gray-600">
-                Luôn cập nhật những xu hướng mới nhất trong công nghệ và cuộc sống
+                Các phòng ban warm-up, cùng nhau trao đổi công việc trong ngày và bắt đầu làm việc đến trưa
               </p>
             </div>
 
             <div className="text-center p-8 bg-white rounded-xl shadow-sm">
-              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Clock className="w-8 h-8 text-primary-600" />
+              <div className=" bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Image src="https://xprofile.vn/_next/image?url=https%3A%2F%2Fhe44r2a3tgobj.vcdn.cloud%2Fp%2FImage%2Fe621ec29-05fc-49c7-b3ab-d078b005c816.png&w=256&q=75" alt="Trending" width={120} height={120} />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Nhanh chóng</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Buổi trưa</h3>
               <p className="text-gray-600">
-                Đọc những bài viết ngắn gọn, dễ hiểu trong thời gian ngắn
+                Ăn uống, nghỉ ngơi nạp lại năng lượng chuẩn bị bắt đầu làm việc lại vào buổi chiều
               </p>
             </div>
 
             <div className="text-center p-8 bg-white rounded-xl shadow-sm">
-              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Star className="w-8 h-8 text-primary-600" />
+              <div className="bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Image src="https://xprofile.vn/_next/image?url=https%3A%2F%2Fhe44r2a3tgobj.vcdn.cloud%2Fp%2FImage%2F652a8e60-e032-4579-9614-156b72812fed.png&w=256&q=75" alt="Trending" width={120} height={120} />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Chất lượng</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Buổi chiều</h3>
               <p className="text-gray-600">
-                Mọi bài viết đều được tuyển chọn và kiểm duyệt kỹ lưỡng
+                Tan làm, có thể tụ tập đi ăn uống cùng nhau
               </p>
             </div>
           </div>

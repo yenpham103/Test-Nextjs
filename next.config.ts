@@ -6,7 +6,9 @@ const nextConfig = {
     domains: [
       'images.unsplash.com',
       'via.placeholder.com',
-      'picsum.photos'
+      'picsum.photos',
+      'xprofile.vn',
+      'he44r2a3tgobj.vcdn.cloud'
     ],
     formats: ['image/webp', 'image/avif'],
   },

@@ -89,18 +89,18 @@ const BlogDetail: React.FC<BlogDetailProps> = ({ post, relatedPosts }) => {
 
                         <div className="flex items-center justify-between py-6 border-y border-gray-200 mb-8">
                             <div className="flex items-center space-x-4">
-                                <button className="flex items-center space-x-2 text-gray-600 hover:text-red-600 transition-colors">
+                                <button className="flex items-center space-x-2 text-gray-600 hover:text-red-600 transition-colors cursor-pointer">
                                     <Heart className="w-5 h-5" />
                                     <span>Thích</span>
                                 </button>
-                                <button className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors">
+                                <button className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors cursor-pointer">
                                     <MessageCircle className="w-5 h-5" />
                                     <span>Bình luận</span>
                                 </button>
                             </div>
                             <button
                                 onClick={handleShare}
-                                className="flex items-center space-x-2 text-gray-600 hover:text-primary-600 transition-colors"
+                                className="flex items-center space-x-2 text-gray-600 hover:text-primary-600 transition-colors cursor-pointer"
                             >
                                 <Share2 className="w-5 h-5" />
                                 <span>Chia sẻ</span>
